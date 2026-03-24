@@ -1,51 +1,42 @@
-# Magnetic-Tweezer-FEM
+# magnetic-tweezer-cad
 
-Hexapole magnetic tweezer FEM simulation project. CAD geometry preprocessing pipeline for converting SolidWorks designs into ANSYS-ready FEM models.
+Hexapole magnetic tweezer CAD model repository. Contains two hexapole designs with STEP geometry files for FEM simulation.
 
-## Hexapole Pole Configuration
+## Designs
+
+### `hung/` — New Hexapole Design (Hung Lab)
+
+Current design under development. Includes original CAD geometry and FEM-ready simplified versions.
+
+| Folder | Contents |
+|--------|----------|
+| `assembly/` | Full assembly STEP |
+| `parts/` | Individual part STEP files (original, with screw holes) |
+| `step_for_fem/` | Simplified STEP files for FEM (holes removed, poles aligned to 1.0 mm tip distance) |
+
+### `long-fei/` — Reference Design (Fei Long 2016)
+
+Reference hexapole from Fei Long's PhD dissertation (Ohio State University, 2016).
+
+| Folder | Contents |
+|--------|----------|
+| `step_for_fem/` | ANSYS-ready model (`MTmodel.step`) |
+| `reference/` | APDL modeling scripts |
+
+## Pole Configuration
 
 | Plane | Poles |
 |-------|-------|
-| Upper (blue) | P2 (+90°), P4 (-30°), P5 (-150°) |
-| Lower (red)  | P1 (-90°), P3 (+150°), P6 (+30°) |
+| Upper | P2 (+90°), P4 (-30°), P5 (-150°) |
+| Lower | P1 (-90°), P3 (+150°), P6 (+30°) |
 
 **Opposing pairs:** P1↔P2, P3↔P4, P5↔P6
 
-## Directory Structure
+## Notes
 
-```
-├── cad/                  Original STEP geometry (exported from SolidWorks)
-│   ├── Hexapole_Assembly.STEP
-│   └── parts/            Individual part STEP files
-├── fem/                  FEM-ready simplified geometry
-│   ├── Hexapole_Assembly_FEM.STEP   Final model (holes filled, tips aligned)
-│   └── parts/            Simplified individual parts
-├── scripts/              CadQuery/Python preprocessing scripts
-├── reference/            Fei Long 2016 dissertation reference design
-│   ├── MTmodel.step      Reference hexapole model
-│   └── apdl/             ANSYS APDL simulation scripts (Coil 1-6)
-└── figures/              Visualization outputs
-```
-
-## Scripts
-
-All scripts use [CadQuery](https://cadquery.readthedocs.io/) + OpenCascade.
-
-| Script | Purpose |
-|--------|---------|
-| `scripts/fill_holes.py` | Remove screw holes from STEP parts for cleaner FEM mesh |
-| `scripts/adjust_pole_z.py` | Adjust upper pole positions for 1.0 mm tip-to-tip distance |
-| `scripts/verify_tip_alignment.py` | Verify opposing pole pair colinearity |
-| `scripts/plot_pole_mapping.m` | MATLAB visualization of pole positions and mapping |
-
-## Requirements
-
-- Python 3.10+
-- [CadQuery](https://cadquery.readthedocs.io/) (`pip install cadquery`)
-- MATLAB R2020a+ (for plotting only)
+- Git tracks **STEP files only** — SolidWorks source files (.SLDPRT/.SLDASM) are kept locally
+- FEM simulation scripts and post-processing are in a separate repo: [magnetic-tweezers-sim](https://github.com/kevinfan100/magnetic-tweezers-sim)
 
 ## Reference
 
-Based on the hexapole electromagnetic actuation system described in:
-
-> Fei Long, "Active Control of the Probe-Sample Interaction Force at the Piconewton Scale by a Magnetic Microprobe in Aqueous Solutions," PhD dissertation, 2016.
+> Fei Long, "Active Control of the Probe-Sample Interaction Force at the Piconewton Scale by a Magnetic Microprobe in Aqueous Solutions," PhD dissertation, Ohio State University, 2016.
