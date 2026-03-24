@@ -1,0 +1,30 @@
+# SolidWorks
+*.SLDPRT
+*.SLDASM
+*.SLDDRW
+~$*
+
+# System
+Thumbs.db
+.DS_Store
+
+# ANSYS outputs
+*.rst
+*.db
+*.full
+*.err
+*.log
+*.out
+*.page
+
+# Claude Code local
+.claude/settings.local.json
+
+# Backup files (use git history instead)
+*_BACKUP.*
+
+# Legacy directories (unorganized originals, kept locally)
+legacy/
+STEP_for_FEM/
+Hexapole_Device/
+01Long Fei Tweezer/
