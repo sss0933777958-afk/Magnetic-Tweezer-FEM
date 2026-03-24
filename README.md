@@ -4,8 +4,6 @@ Hexapole magnetic tweezer FEM simulation project. CAD geometry preprocessing pip
 
 ## Hexapole Pole Configuration
 
-![Pole mapping top view](figures/pole_mapping_top.png)
-
 | Plane | Poles |
 |-------|-------|
 | Upper (blue) | P2 (+90°), P4 (-30°), P5 (-150°) |
