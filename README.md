@@ -1,4 +1,4 @@
-# magnetic-tweezer-fem
+# Magnetic-Tweezer-FEM
 
 Hexapole magnetic tweezer FEM simulation project. CAD geometry preprocessing pipeline for converting SolidWorks designs into ANSYS-ready FEM models.
 
