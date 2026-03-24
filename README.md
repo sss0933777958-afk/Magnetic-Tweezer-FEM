@@ -23,14 +23,6 @@ Reference hexapole from Fei Long's PhD dissertation (Ohio State University, 2016
 | `step_for_fem/` | ANSYS-ready model (`MTmodel.step`) |
 | `reference/` | APDL modeling scripts |
 
-## Pole Configuration
-
-| Plane | Poles |
-|-------|-------|
-| Upper | P2 (+90°), P4 (-30°), P5 (-150°) |
-| Lower | P1 (-90°), P3 (+150°), P6 (+30°) |
-
-**Opposing pairs:** P1↔P2, P3↔P4, P5↔P6
 
 ## Notes
 
